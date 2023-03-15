@@ -1,0 +1,6 @@
+
+<div><a routerLink="/">Home</a></div>
+<item [item]="currentItem" (update)="write()"></item>
+<div *ngFor="let news_id of getNewsIds()">
+  <button (click)="setCurrentNewsId(news_id)">{{news_id}}</button>
+</div>

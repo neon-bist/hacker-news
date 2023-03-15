@@ -1,0 +1,9 @@
+I am here ! {{ item | json}}
+<third ></third>
+<div>
+  <button *ngFor="let kid of item.kids" (click)="onClick(kid)">{{kid}} </button>
+</div>
+
+<div *ngIf="subNews">
+  <item [item]="subNews"></item>
+</div>
