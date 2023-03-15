@@ -1,23 +1,21 @@
-import { Third } from './third.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NewsTable } from './news-table.component';
-import { Item } from './item.component';
+import { NewsTable } from './news-list/news-list.component';
+import { Item } from './item/item.component';
+import { SearchBarComponent } from './search-bar/search-bar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NewsTable,
     Item,
-    Third
+    SearchBarComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     HttpClientModule
   ],
   providers: [],

@@ -1,0 +1,6 @@
+<div style="color: rebeccapurple" [class]="'item-level-'+level" *ngIf="item && item.by">
+  <button (click)="toggledOpened()" style="border: 1px solid red">{{item.by}} {{item.kids?.length || 0}}</button>
+  <ng-container *ngIf="opened">
+    <item *ngFor="let kid_id of item.kids" [item_id]="kid_id" [level]="level+1"></item>
+  </ng-container>
+</div>

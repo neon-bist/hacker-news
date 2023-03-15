@@ -1,0 +1,10 @@
+
+<div><a routerLink="/">Home</a></div>
+<button (click)="loadMoreNews()">Load More</button>
+
+    <div *ngFor="let item of news">
+      <button (click)="toggleOpened(item.id)">{{item.title}}</button>
+        <ng-container *ngIf="openedNews[item.id]">
+          <item *ngFor="let kid_id of item.kids" [item_id]="kid_id"></item>
+        </ng-container>
+    </div>

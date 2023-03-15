@@ -1,4 +1,3 @@
-import { NewsService } from './hacker.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -8,7 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'hackernews';
-  
 
-
+  onFilter(val: string){
+    console.log(val)
+  }
 }

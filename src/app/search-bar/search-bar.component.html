@@ -1,0 +1,9 @@
+<form (submit)="onFormSubmit($event)">
+  <div class="ui right labeled left icon fluid input">
+    <i class="tags icon"></i>
+    <input #searchTerm (input)="term = searchTerm.value" placeholder="Enter tags to filter and Press Enter">
+    <a class="ui tag label">
+      Add Tag
+    </a>
+  </div>
+</form>
