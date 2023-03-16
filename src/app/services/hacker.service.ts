@@ -36,7 +36,7 @@ export class NewsService {
 
   fetchItem(id: number, type: string = 'item') {
     this.fetch(NewsRequestType.ITEM, id).subscribe((data) => {
-      if (type === NewsRequestType.STORY) this.lastNewsLoadedIndex++;
+      // if (type === NewsRequestType.STORY) this.lastNewsLoadedIndex++;
       this.updateData(data);
     });
   }
@@ -67,13 +67,15 @@ export class NewsService {
     for (let i = lastIndex + 1; i <= lastIndex + 10; i++) {
       this.fetchItem(this.newsIds[i], NewsRequestType.STORY);
     }
+    this.lastNewsLoadedIndex+=10;
   }
 
   getTopStories() {
     let stories: any = [];
     let data = this.newsData.getValue();
     for (let i = 0; i <= this.lastNewsLoadedIndex; i++)
-      if (data[this.newsIds[i]]) stories.push(data[this.newsIds[i]]);
+      // if (data[this.newsIds[i]]) 
+      stories.push(data[this.newsIds[i]]);
     return stories;
   }
 

@@ -1,6 +1,25 @@
-<div style="color: rebeccapurple" [class]="'item-level-'+level" *ngIf="item && item.by">
-  <button (click)="toggledOpened()" style="border: 1px solid red">{{item.by}} {{item.kids?.length || 0}}</button>
-  <ng-container *ngIf="opened">
-    <item *ngFor="let kid_id of item.kids" [item_id]="kid_id" [level]="level+1"></item>
-  </ng-container>
+<div class="ui divider hidden"></div>
+<div *ngIf="!item">
+  <app-segment>
+    <app-placeholder></app-placeholder>
+  </app-segment>
+</div>
+<div [class]="'item-level-'+level" *ngIf="item">
+  <app-segment>
+    <p class="overflow-auto">
+      <span class="user-handle">{{item.by}}</span>
+      <span class="comment-text" [innerHTML]="item.text"></span>
+      <span class="commented-at">{{item.time * 1000 | date: 'medium'}}</span>
+    </p>
+
+    <ng-container *ngIf="item.kids?.length">
+      <button (click)="toggledOpened()" class="ui button">{{item.kids?.length || 0}} Replies</button>
+    </ng-container>
+
+    <ng-container *ngIf="opened">
+      <div class="ui divider"></div>
+      <item *ngFor="let kid_id of item.kids" [item_id]="kid_id" [level]="level+1"></item>
+    </ng-container>
+
+  </app-segment>
 </div>

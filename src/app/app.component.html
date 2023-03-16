@@ -1,3 +1,9 @@
-<h1>Hacker News</h1>
-<app-search-bar (submitted)="onFilter($event)"></app-search-bar>
-<app-news-list></app-news-list>
+<header class="header-container">
+  <h1 class="main-title">Hacker News</h1>
+  <div class="ui container">
+    <app-search-bar (submitted)="onFilter($event)"></app-search-bar>
+  </div>
+</header>
+<div class="news-container">
+  <app-news-list [searchTag]="searchTag"></app-news-list>
+</div>

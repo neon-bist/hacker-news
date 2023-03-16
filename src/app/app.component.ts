@@ -7,8 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'hackernews';
+  searchTag=''
 
   onFilter(val: string){
-    console.log(val)
+    this.searchTag = val;
   }
 }

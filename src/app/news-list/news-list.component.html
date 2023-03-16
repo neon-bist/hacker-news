@@ -1,10 +1,22 @@
+<div class="ui container" infinite-scroll [infiniteScrollDistance]="1" [infiniteScrollThrottle]="0"
+  [infiniteScrollDisabled]="false" (scrolled)="loadMoreNews()">
+  <div *ngFor="let item of filteredNews">
+    <app-segment *ngIf="!item"><app-placeholder></app-placeholder></app-segment>
+    <app-segment *ngIf="item">
+      <h1>{{item.title}} <a [href]="item.url">Visit</a></h1>
+      <p> By: <span class="user-handle">{{item.by}}</span></p>
+      <p class="news-upvotes"> Upvotes: <span>{{item.score}}</span> </p>
+      <p class="commented-at">{{item.time * 1000 |date:'medium'}}</p>
+      <p *ngIf="item.kids?.length">
+        <span (click)="toggleOpened(item.id)" class="ui button primary">
+          {{item.kids?.length || 0}} Comments
+        </span>
+      </p>
+      <ng-container *ngIf="openedNews[item.id]">
+        <item *ngFor="let kid_id of item.kids" [item_id]="kid_id"></item>
+      </ng-container>
+    </app-segment>
+    <div class="ui divider"></div>
 
-<div><a routerLink="/">Home</a></div>
-<button (click)="loadMoreNews()">Load More</button>
-
-    <div *ngFor="let item of news">
-      <button (click)="toggleOpened(item.id)">{{item.title}}</button>
-        <ng-container *ngIf="openedNews[item.id]">
-          <item *ngFor="let kid_id of item.kids" [item_id]="kid_id"></item>
-        </ng-container>
-    </div>
+  </div>
+</div>

@@ -1,18 +1,43 @@
 /* You can add global styles to this file, and also import other style files */
 @import "semantic-ui-css/semantic.css";
 
-.item-level-0{
-  margin-left: 5px;
+.item-level-0 {
+  color: rgb(86, 74, 91);
 }
-.item-level-1{
-  margin-left: 10px;
+.item-level-1 {
+  color: green;
 }
-.item-level-2{
-  margin-left: 15px;
+.item-level-2 {
+  color: blueviolet;
 }
-.item-level-3{
-  margin-left: 20px;
+.item-level-3 {
+  color: darkgoldenrod;
 }
-.item-level-4{
-  margin-left: 25px;
+.item-level-4 {
+  color: darksalmon;
+}
+
+.user-handle {
+  color: #000;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.commented-at {
+  color: grey;
+  display: block;
+  font-size: 0.8rem;
+}
+
+.news-upvotes {
+  color: gray;
+}
+
+.news-upvotes span {
+  color: rgb(12, 139, 25);
+  font-weight: bold;
+}
+
+.overflow-auto {
+  overflow: auto;
 }

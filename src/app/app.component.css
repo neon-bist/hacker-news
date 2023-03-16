@@ -1,0 +1,18 @@
+.main-title {
+  text-align: center;
+  margin: 40px auto;
+}
+
+.header-container {
+  position: fixed;
+  background: white;
+  z-index: 1;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  padding-bottom: 20px;
+}
+
+.news-container{
+  padding-top: 180px;
+}
